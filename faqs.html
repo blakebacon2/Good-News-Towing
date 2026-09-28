@@ -468,8 +468,8 @@
 }.hero-copy h1 {
   font-size:clamp(1.9rem,7vw,2.75rem);
 }.hero-character {
-  height: 165px;
-    padding: 12px 10px;
+    height: 230px;
+    padding: 16px 10px;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -494,7 +494,7 @@
   gap:6px;
 }.hero-card {
   grid-template-columns:1fr 1fr;
-  grid-template-areas:"copy copy" "anastasia jojo";
+  grid-template-areas:"copy copy" "jojo anastasia";
 }.hero-copy {
   grid-area:copy;
   padding:24px 18px 4px;
@@ -505,8 +505,8 @@
 }.hero-character {
   padding:0 8px;
 }.hero-character {
-  height: 165px;
-    padding: 12px 10px;
+    height: 230px;
+    padding: 16px 10px;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -760,5 +760,46 @@
     </div>
    </div>
   </footer>
- </body>
+ 
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const closeButton = document.getElementById("closeButton");
+  const siteDrawer = document.getElementById("siteDrawer");
+  const drawerBackdrop = document.getElementById("drawerBackdrop");
+
+  function openDrawer() {
+    siteDrawer.classList.add("open");
+    drawerBackdrop.classList.add("open");
+    document.body.classList.add("menu-open");
+    menuButton.setAttribute("aria-expanded", "true");
+    siteDrawer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeDrawer() {
+    siteDrawer.classList.remove("open");
+    drawerBackdrop.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    siteDrawer.setAttribute("aria-hidden", "true");
+  }
+
+  menuButton.addEventListener("click", openDrawer);
+  closeButton.addEventListener("click", closeDrawer);
+  drawerBackdrop.addEventListener("click", closeDrawer);
+
+  siteDrawer.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeDrawer);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteDrawer.classList.contains("open")) {
+      closeDrawer();
+      menuButton.focus();
+    }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
 </html>
