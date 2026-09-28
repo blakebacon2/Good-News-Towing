@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Good News Towing | Towing &amp; Roadside Assistance in Johnson County, KS</title>
+<meta content="Good News Towing is a local, family-run towing and roadside assistance company based in Olathe and serving Johnson County, Kansas." name="description"/>
+<meta content="Good News Towing LLC" name="author"/>
+<meta content="Good News Towing" property="og:title"/>
+<meta content="Local towing and roadside assistance based in Olathe and serving Johnson County, Kansas." property="og:description"/>
+<meta content="https://goodnewstowing.com/images/Updated%20Logo.png" property="og:image"/>
+<meta content="https://goodnewstowing.com/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="images/favicon.png" rel="icon" type="image/x-icon"/>
+<style>
+    :root {
+      --blue: #1e7af9;
+      --blue-dark: #125fc9;
+      --ink: #172033;
+      --muted: #5d6676;
+      --soft: #f5f8fc;
+      --line: #e7ebf1;
+      --white: #ffffff;
+      --pink: #ff319f;
+      --link: #0efff3;
+      --shadow: 0 16px 40px rgba(23, 32, 51, 0.10);
+      --radius: 22px;
+      --content: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(30, 122, 249, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 28px), var(--content));
+      min-height: 74px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .menu-button {
+      justify-self: start;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.14);
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      width: 22px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .menu-icon span {
+      display: block;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .header-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--white);
+    }
+
+    .call-button {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      background: var(--pink);
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 24px rgba(255, 49, 159, 0.30);
+    }
+
+    .call-button:hover,
+    .call-button:focus-visible {
+      background: #e5228d;
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(23, 32, 51, 0.38);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 80;
+      width: min(88vw, 360px);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      transform: translateX(-104%);
+      transition: transform 220ms ease;
+      box-shadow: 18px 0 60px rgba(23, 32, 51, 0.18);
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .drawer-brand {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .close-button {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--soft);
+      color: var(--ink);
+      font-size: 1.45rem;
+      cursor: pointer;
+    }
+
+    .drawer-nav {
+      display: grid;
+      gap: 4px;
+      padding: 28px 0;
+    }
+
+    .drawer-nav a {
+      padding: 13px 12px;
+      border-radius: 12px;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .drawer-nav a:hover,
+    .drawer-nav a:focus-visible {
+      background: var(--soft);
+      color: var(--blue-dark);
+    }
+
+    .drawer-contact {
+      margin-top: auto;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .drawer-contact strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,0.22), transparent 24%),
+        linear-gradient(145deg, #1e7af9 0%, #166ee7 52%, #125fc9 100%);
+      color: var(--white);
+    }
+
+    .hero-inner {
+      width: min(calc(100% - 28px), var(--content));
+      min-height: 560px;
+      margin: 0 auto;
+      padding: 72px 0 64px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: min(100%, 780px);
+    }
+
+    .hero-logo {
+      width: min(92vw, 640px);
+      margin: 0 auto 26px;
+      filter: drop-shadow(0 16px 28px rgba(0,0,0,0.10));
+    }
+
+    .hero-kicker {
+      margin: 0 0 8px;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-subtitle {
+      width: min(100%, 650px);
+      margin: 20px auto 0;
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .primary-action,
+    .secondary-action {
+      min-height: 50px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      font-weight: 800;
+    }
+
+    .primary-action {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .secondary-action {
+      border: 1px solid rgba(255,255,255,0.38);
+      background: rgba(255,255,255,0.10);
+      color: var(--white);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section.soft {
+      background: var(--soft);
+    }
+
+    .container {
+      width: min(calc(100% - 28px), var(--content));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      width: min(100%, 700px);
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--pink);
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,49,159,0.16);
+      color: #ff319f;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .service-area-box {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 32px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, var(--blue), var(--blue-dark));
+      color: var(--white);
+    }
+
+    .service-area-box h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+    }
+
+    .service-area-box p {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .service-area-link {
+      justify-self: end;
+      min-height: 50px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--pink);
+      color: var(--white);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-photo {
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .about-copy h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .about-copy p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .footer {
+      padding: 42px 0 28px;
+      background: var(--blue-dark);
+      color: rgba(255,255,255,0.76);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .footer strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .footer p {
+      margin: 7px 0 0;
+    }
+
+    .footer-links a { color: var(--link); }
+
+.service-area-box a:not(.service-area-link),
+.hero a:not(.primary-action):not(.secondary-action) { color: var(--link); }
+
+.footer-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .copyright {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.9rem;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(14,255,243,0.60);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        min-height: 66px;
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .header-name {
+        justify-self: center;
+        font-size: 0.78rem;
+      }
+
+      .call-button {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: 0.86rem;
+      }
+
+      .menu-button {
+        width: 42px;
+        height: 42px;
+      }
+
+      .hero-inner {
+        min-height: 490px;
+        padding: 54px 0;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .service-area-box,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-area-link,
+      .footer-links a { color: var(--link); }
+
+.service-area-box a:not(.service-area-link),
+.hero a:not(.primary-action):not(.secondary-action) { color: var(--link); }
+
+.footer-links {
+        justify-self: start;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .header-name {
+        display: none;
+      }
+
+      .header-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .call-button {
+        justify-self: end;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .primary-action,
+      .secondary-action {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  
+    /* Good News Towing service cards */
+    .services-section {
+      background: #ffffff;
+    }
+
+    .service-card,
+    .service-box,
+    .services-grid .box,
+    .service_section .box {
+      background: #1e7af9 !important;
+      color: #ffffff !important;
+      border-radius: 18px;
+      border: none !important;
+      box-shadow: 0 10px 28px rgba(30, 122, 249, 0.18);
+    }
+
+    .service-card h2,
+    .service-card h3,
+    .service-card h4,
+    .service-card p,
+    .service-box h2,
+    .service-box h3,
+    .service-box h4,
+    .service-box p,
+    .services-grid .box h2,
+    .services-grid .box h3,
+    .services-grid .box h4,
+    .services-grid .box p,
+    .service_section .box h2,
+    .service_section .box h3,
+    .service_section .box h4,
+    .service_section .box p {
+      color: #ffffff !important;
+    }
+
+    .service-card a,
+    .service-box a,
+    .services-grid .box a,
+    .service_section .box a {
+      color: #0efff3 !important;
+    }
+
+  
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      min-height: 320px;
+    }
+
+    .service-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      order: 1;
+    }
+
+    .service-art {
+      order: 2;
+      width: min(100%, 160px);
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      margin: 4px auto 2px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
+    }
+
+    .service-card p {
+      order: 3;
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .service-icon {
+      display: none !important;
+    }
+
+    @media (max-width: 760px) {
+      .service-card {
+        min-height: auto;
+        padding: 22px 20px 24px;
+      }
+      .service-art {
+        width: min(100%, 140px);
+      }
+    }
+
+  
+    /* FINAL compact service-card layout */
+    .service-card {
+      display: block !important;
+      min-height: 0 !important;
+      padding: 20px 20px 22px !important;
+      text-align: left !important;
+    }
+
+    .service-card-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 10px !important;
+      margin: 0 0 10px 0 !important;
+    }
+
+    .service-card h3 {
+      order: initial !important;
+      flex: 0 1 auto !important;
+      margin: 0 !important;
+      font-size: 1.18rem !important;
+      line-height: 1.1 !important;
+      white-space: nowrap;
+    }
+
+    .service-art {
+      order: initial !important;
+      flex: 0 0 52px !important;
+      width: 52px !important;
+      height: 52px !important;
+      margin: 0 !important;
+      object-fit: contain !important;
+      filter: drop-shadow(0 5px 8px rgba(0,0,0,0.10)) !important;
+    }
+
+    .service-card p {
+      order: initial !important;
+      margin: 0 !important;
+      font-size: 0.94rem !important;
+      line-height: 1.55 !important;
+    }
+
+    @media (max-width: 760px) {
+      .service-card {
+        padding: 17px 16px 19px !important;
+      }
+
+      .service-card-header {
+        gap: 8px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .service-card h3 {
+        font-size: 1.06rem !important;
+      }
+
+      .service-art {
+        flex-basis: 44px !important;
+        width: 44px !important;
+        height: 44px !important;
+      }
+
+      .service-card p {
+        font-size: 0.90rem !important;
+      }
+    }
+
+  
+    /* September concept refresh: tighter top-of-page flow */
+    .header-inner {
+      min-height: 68px;
+    }
+
+    .call-button {
+      min-height: 44px;
+      padding: 0 16px;
+      font-size: 0.94rem;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: 0 !important;
+    }
+
+    .hero-inner {
+      padding-top: 36px !important;
+      padding-bottom: 38px !important;
+    }
+
+    .hero-logo {
+      margin-bottom: 18px !important;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.45rem);
+      line-height: 1.02;
+    }
+
+    .hero-subtitle {
+      margin-top: 14px;
+      max-width: 700px;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+    }
+
+    #services.section {
+      padding-top: 48px;
+      padding-bottom: 66px;
+    }
+
+    .service-heading {
+      margin-bottom: 22px;
+    }
+
+    .service-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        width: min(calc(100% - 20px), var(--content));
+        min-height: 62px;
+        grid-template-columns: auto 1fr auto;
+        gap: 9px;
+      }
+
+      .menu-button {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .header-name {
+        font-size: 0.78rem;
+        letter-spacing: 0.035em;
+        text-align: center;
+      }
+
+      .call-button {
+        min-height: 40px;
+        padding: 0 11px;
+        border-radius: 12px;
+        font-size: 0.78rem;
+        letter-spacing: 0;
+      }
+
+      .hero-inner {
+        padding-top: 28px !important;
+        padding-bottom: 30px !important;
+      }
+
+      .hero-logo {
+        margin-bottom: 14px !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.85rem, 8vw, 2.5rem);
+      }
+
+      .hero-subtitle {
+        margin-top: 11px;
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+
+      .hero-actions {
+        margin-top: 18px;
+        gap: 9px;
+      }
+
+      .primary-action,
+      .secondary-action {
+        min-height: 46px;
+        padding: 0 15px;
+        font-size: 0.93rem;
+      }
+
+      #services.section {
+        padding-top: 34px;
+        padding-bottom: 52px;
+      }
+
+      .service-heading {
+        margin-bottom: 18px;
+      }
+
+      .service-heading h2 {
+        font-size: 1.85rem;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .header-name {
+        display: none;
+      }
+
+      .header-inner {
+        grid-template-columns: auto 1fr;
+      }
+
+      .call-button {
+        justify-self: end;
+        font-size: 0.77rem;
+      }
+    }
+
+  
+    /* All-blue brand concept */
+    body {
+      background: #1e7af9 !important;
+      color: #ffffff !important;
+    }
+
+    main,
+    .section,
+    .section.soft {
+      background: #1e7af9 !important;
+      color: #ffffff !important;
+    }
+
+    .section-heading h2,
+    .section-heading p,
+    .about-copy h2,
+    .about-copy p,
+    .service-card h3,
+    .service-card p {
+      color: #ffffff !important;
+    }
+
+    .eyebrow {
+      color: #ffffff !important;
+    }
+
+    .service-grid {
+      gap: 16px;
+    }
+
+    .service-card {
+      background: #176ad8 !important;
+      border: 2px solid #ff319f !important;
+      color: #ffffff !important;
+      box-shadow: 0 10px 24px rgba(10, 58, 135, 0.16) !important;
+    }
+
+    .service-card-header {
+      color: #ffffff !important;
+    }
+
+    .service-area-box {
+      background: #176ad8 !important;
+      border: 2px solid #ff319f;
+      color: #ffffff !important;
+      box-shadow: none;
+    }
+
+    .service-area-box h2,
+    .service-area-box p {
+      color: #ffffff !important;
+    }
+
+    .about-photo {
+      border: 2px solid rgba(255, 49, 159, 0.85);
+      box-shadow: 0 12px 28px rgba(10, 58, 135, 0.18);
+    }
+
+    .footer {
+      background: #125fc9 !important;
+      border-top: 1px solid rgba(255,255,255,0.16);
+    }
+
+    a:not(.call-button):not(.primary-action):not(.secondary-action):not(.service-area-link) {
+      color: #0efff3;
+    }
+
+    .drawer {
+      background: #176ad8;
+      color: #ffffff;
+    }
+
+    .drawer-top {
+      border-bottom-color: rgba(255,255,255,0.16);
+    }
+
+    .drawer-brand,
+    .drawer-contact strong {
+      color: #ffffff;
+    }
+
+    .drawer-contact {
+      color: rgba(255,255,255,0.82);
+      border-top-color: rgba(255,255,255,0.16);
+    }
+
+    .drawer-nav a {
+      color: #ffffff;
+    }
+
+    .drawer-nav a:hover,
+    .drawer-nav a:focus-visible {
+      background: rgba(255,255,255,0.10);
+      color: #0efff3;
+    }
+
+    .close-button {
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+    }
+
+    @media (max-width: 760px) {
+      .service-grid {
+        gap: 13px;
+      }
+
+      .service-card {
+        border-width: 1.5px !important;
+      }
+    }
+
+  
+    /* Refined homepage flow */
+    .service-learn-link,
+    .text-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #0efff3 !important;
+      font-weight: 800;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+
+    .service-learn-link:hover,
+    .service-learn-link:focus-visible,
+    .text-link:hover,
+    .text-link:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .compact-heading {
+      margin-bottom: 18px !important;
+    }
+
+    .compact-heading h2 {
+      color: #ffffff !important;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.08;
+    }
+
+    .coverage-section {
+      padding-top: 58px !important;
+      padding-bottom: 34px !important;
+    }
+
+    .service-area-box {
+      display: block !important;
+      padding: 28px !important;
+      border-radius: 22px !important;
+    }
+
+    .coverage-label {
+      margin: 0 0 8px !important;
+      color: #ffffff !important;
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .service-area-box > p:not(.coverage-label) {
+      margin: 0 !important;
+      color: rgba(255,255,255,0.92) !important;
+      max-width: 720px;
+    }
+
+    .service-area-link {
+      display: none !important;
+    }
+
+    .family-section {
+      padding-top: 28px !important;
+      padding-bottom: 64px !important;
+    }
+
+    .family-preview {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .family-preview .about-photo {
+      margin: 0;
+    }
+
+    .family-copy p {
+      margin: 0;
+      color: #ffffff !important;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .coverage-section {
+        padding-top: 38px !important;
+        padding-bottom: 18px !important;
+      }
+
+      .compact-heading {
+        margin-bottom: 14px !important;
+      }
+
+      .compact-heading h2 {
+        font-size: 1.82rem;
+      }
+
+      .service-area-box {
+        padding: 21px 18px !important;
+        border-radius: 18px !important;
+      }
+
+      .family-section {
+        padding-top: 16px !important;
+        padding-bottom: 46px !important;
+      }
+
+      .family-preview {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .family-copy {
+        padding: 0 2px;
+      }
+
+      .service-learn-link,
+      .text-link {
+        margin-top: 10px;
+        font-size: 0.92rem;
+      }
+    }
+
+  
+    /* Sticky action header + button-free hero */
+    .header-inner {
+      grid-template-columns: auto 1fr !important;
+      gap: 12px !important;
+    }
+
+    .header-actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .header-services {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 15px;
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 13px;
+      background: rgba(255,255,255,0.08);
+      color: #ffffff !important;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .header-services:hover,
+    .header-services:focus-visible {
+      background: rgba(255,255,255,0.16);
+    }
+
+    .hero-inner {
+      padding-bottom: 20px !important;
+    }
+
+    #services.section {
+      padding-top: 24px !important;
+    }
+
+    .service-heading {
+      margin-bottom: 14px !important;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        width: min(calc(100% - 16px), var(--content)) !important;
+        min-height: 62px !important;
+        gap: 8px !important;
+      }
+
+      .header-actions {
+        gap: 7px;
+      }
+
+      .header-services {
+        min-height: 40px;
+        padding: 0 11px;
+        border-radius: 12px;
+        font-size: 0.82rem;
+      }
+
+      .call-button {
+        min-height: 40px !important;
+        padding: 0 11px !important;
+        font-size: 0.78rem !important;
+      }
+
+      .hero-inner {
+        padding-bottom: 18px !important;
+      }
+
+      #services.section {
+        padding-top: 20px !important;
+      }
+
+      .service-heading {
+        margin-bottom: 13px !important;
+      }
+    }
+
+    @media (max-width: 355px) {
+      .header-services {
+        display: none;
+      }
+    }
+
+  
+    /* Mobile spacing + balanced sticky header refinement */
+    .header-inner {
+      grid-template-columns: auto 1fr auto !important;
+      gap: 10px !important;
+    }
+
+    .header-services {
+      justify-self: center !important;
+    }
+
+    .call-button {
+      justify-self: end !important;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        grid-template-columns: auto 1fr auto !important;
+        gap: 8px !important;
+      }
+
+      /* Cut the visible space above the logo roughly in half. */
+      .hero-inner {
+        padding-top: 14px !important;
+        padding-bottom: 8px !important;
+      }
+
+      /* Bring How Can We Help much closer to the Jesus line. */
+      #services.section {
+        padding-top: 10px !important;
+      }
+
+      .header-services {
+        justify-self: center !important;
+      }
+
+      .call-button {
+        justify-self: end !important;
+      }
+    }
+
+    @media (max-width: 355px) {
+      .header-inner {
+        grid-template-columns: auto 1fr !important;
+      }
+
+      .header-services {
+        display: none !important;
+      }
+    }
+
+  
+    /* Real hero-height fix + 4-part sticky navigation */
+    .header-inner {
+      grid-template-columns: auto auto auto auto !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .header-services,
+    .header-faqs {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 11px;
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: #ffffff !important;
+      font-size: 0.80rem;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .header-services:hover,
+    .header-services:focus-visible,
+    .header-faqs:hover,
+    .header-faqs:focus-visible {
+      background: rgba(255,255,255,0.16);
+    }
+
+    /* This is the rule that was still forcing the mobile hero to stay tall. */
+    .hero-inner {
+      min-height: 0 !important;
+      height: auto !important;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        width: min(calc(100% - 16px), var(--content)) !important;
+        grid-template-columns: auto auto auto auto !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+      }
+
+      .header-services,
+      .header-faqs {
+        min-height: 40px;
+        padding: 0 9px;
+        font-size: 0.76rem;
+      }
+
+      .call-button {
+        min-height: 40px !important;
+        padding: 0 10px !important;
+        font-size: 0.75rem !important;
+      }
+
+      .hero-inner {
+        min-height: 0 !important;
+        height: auto !important;
+        padding-top: 14px !important;
+        padding-bottom: 8px !important;
+      }
+
+      #services.section {
+        padding-top: 10px !important;
+      }
+    }
+
+    @media (max-width: 365px) {
+      .header-faqs {
+        display: none !important;
+      }
+
+      .header-inner {
+        grid-template-columns: auto auto auto !important;
+      }
+    }
+
+  
+    /* Spacing refinement from mobile review */
+    @media (max-width: 760px) {
+      /* Give the hero copy a little more breathing room before Services. */
+      .hero-inner {
+        padding-bottom: 10px !important;
+      }
+
+      #services.section {
+        padding-top: 18px !important;
+        padding-bottom: 30px !important;
+      }
+
+      /* Pull Johnson County closer to the end of the service cards. */
+      .coverage-section {
+        padding-top: 24px !important;
+      }
+    }
+
+  
+    /* Final responsive header behavior */
+    @media (min-width: 768px) {
+      .header-inner {
+        grid-template-columns: auto 1fr auto auto !important;
+        justify-content: initial !important;
+        gap: 22px !important;
+      }
+
+      .header-services {
+        justify-self: end !important;
+      }
+
+      .header-services,
+      .header-faqs {
+        min-height: 44px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        font-size: 0.95rem !important;
+        font-weight: 800 !important;
+      }
+
+      .header-services:hover,
+      .header-services:focus-visible,
+      .header-faqs:hover,
+      .header-faqs:focus-visible {
+        background: transparent !important;
+        color: #0efff3 !important;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .call-button {
+        justify-self: end !important;
+      }
+    }
+
+    /* Keep the mobile header as four compact, easy-to-tap controls. */
+    @media (max-width: 767px) {
+      .header-inner {
+        grid-template-columns: auto auto auto auto !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+      }
+
+      .header-services,
+      .header-faqs {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 40px !important;
+        padding: 0 9px !important;
+        border: 1px solid rgba(255,255,255,0.72) !important;
+        border-radius: 12px !important;
+        background: rgba(255,255,255,0.08) !important;
+        color: #ffffff !important;
+        font-size: 0.76rem !important;
+        font-weight: 800 !important;
+        text-decoration: none !important;
+      }
+    }
+
+    /* Keep the shortened family section visually light. */
+    .about-copy .text-link {
+      margin-top: 12px;
+    }
+
+  
+    /* Footer + lower-page spacing refinement */
+    .footer-phone {
+      color: #ff319f !important;
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .family-section {
+      padding-bottom: 34px !important;
+    }
+
+    .footer {
+      padding-top: 28px !important;
+      padding-bottom: 24px !important;
+    }
+
+    .footer-grid {
+      gap: 20px !important;
+    }
+
+    .copyright {
+      margin-top: 18px !important;
+      padding-top: 16px !important;
+    }
+
+    @media (max-width: 760px) {
+      .family-section {
+        padding-bottom: 22px !important;
+      }
+
+      .footer {
+        padding-top: 24px !important;
+        padding-bottom: 20px !important;
+      }
+
+      .footer-grid {
+        gap: 16px !important;
+      }
+
+      .copyright {
+        margin-top: 16px !important;
+        padding-top: 14px !important;
+      }
+    }
+
+  
+    /* Family section: heading outside, unified bordered content card */
+    .coverage-section {
+      padding-bottom: 24px !important;
+    }
+
+    .family-section {
+      padding-top: 24px !important;
+      padding-bottom: 28px !important;
+    }
+
+    .family-heading {
+      margin-bottom: 18px !important;
+    }
+
+    .family-card {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      align-items: stretch;
+      overflow: hidden;
+      border: 2px solid #ff319f;
+      border-radius: 22px;
+      background: #176ad8;
+      box-shadow: 0 10px 24px rgba(10, 58, 135, 0.14);
+    }
+
+    .family-card-photo {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .family-card-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .family-card-copy {
+      min-width: 0;
+      padding: 32px;
+      align-self: center;
+    }
+
+    .family-card-copy p {
+      margin: 0;
+      color: #ffffff !important;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .family-card-copy .text-link {
+      margin-top: 14px;
+    }
+
+    /* Footer brand treatment */
+    .footer-phone {
+      color: #ff319f !important;
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .footer-links a {
+      color: #0efff3 !important;
+    }
+
+    @media (max-width: 760px) {
+      .coverage-section {
+        padding-bottom: 18px !important;
+      }
+
+      .family-section {
+        padding-top: 18px !important;
+        padding-bottom: 20px !important;
+      }
+
+      .family-heading {
+        margin-bottom: 14px !important;
+      }
+
+      .family-card {
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+      }
+
+      .family-card-photo img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+
+      .family-card-copy {
+        padding: 20px 18px 22px;
+      }
+    }
+
+  
+    /* Final polish: calmer phone emphasis + subtle photo/content divider */
+    .footer-phone {
+      font-weight: 700 !important;
+      font-size: 1rem !important;
+    }
+
+    .family-card-photo {
+      border-right: 1px solid rgba(255,255,255,0.20) !important;
+    }
+
+    @media (max-width: 760px) {
+      .family-card-photo {
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.20) !important;
+      }
+    }
+
+  
+    /* Final mobile rhythm + current-page menu behavior */
+    @media (max-width: 760px) {
+      .hero-inner {
+        padding-bottom: 14px !important;
+      }
+
+      #services.section {
+        padding-top: 24px !important;
+      }
+    }
+
+  
+    /* Final heading alignment tweak */
+    .family-heading {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+  
+    /* Keep the family heading centered and orderly through tablet sizes */
+    .family-heading {
+      text-align: center !important;
+    }
+
+    .family-heading h2 {
+      text-align: center !important;
+      line-height: 1.08 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .family-heading h2 span {
+      display: block;
+    }
+
+    @media (max-width: 1024px) {
+      .family-heading h2 {
+        max-width: 12ch;
+      }
+    }
+
+  
+    /* Narrow-phone rescue + centered section titles */
+    .service-heading,
+    .compact-heading,
+    .family-heading {
+      text-align: center !important;
+    }
+
+    .service-heading h2,
+    .compact-heading h2,
+    .family-heading h2 {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    @media (max-width: 760px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        max-width: 14ch;
+      }
+    }
+
+    /* Prevent horizontal chopping on smaller phones */
+    html, body {
+      overflow-x: hidden !important;
+    }
+
+    @media (max-width: 390px) {
+      .header-inner {
+        width: min(calc(100% - 12px), var(--content)) !important;
+        grid-template-columns: auto auto auto !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+      }
+
+      /* Hide FAQs at this width to keep the header from overflowing */
+      .header-faqs {
+        display: none !important;
+      }
+
+      .menu-button {
+        width: 42px !important;
+        height: 42px !important;
+      }
+
+      .header-services {
+        min-height: 38px !important;
+        padding: 0 10px !important;
+        font-size: 0.78rem !important;
+      }
+
+      .call-button {
+        min-height: 38px !important;
+        padding: 0 12px !important;
+        font-size: 0.80rem !important;
+        white-space: nowrap !important;
+      }
+
+      .hero-inner {
+        padding-top: 16px !important;
+      }
+
+      .hero-logo {
+        margin-bottom: 12px !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.55rem, 8.2vw, 2.05rem) !important;
+        line-height: 1.05 !important;
+      }
+
+      .hero-subtitle {
+        font-size: 0.94rem !important;
+        line-height: 1.45 !important;
+        max-width: 29ch !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.6rem, 8.3vw, 2rem) !important;
+        line-height: 1.08 !important;
+      }
+
+      .service-card {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      .service-card h3 {
+        font-size: 1.03rem !important;
+      }
+
+      .service-card p,
+      .family-card-copy p,
+      .service-area-box > p:not(.coverage-label) {
+        font-size: 0.92rem !important;
+      }
+    }
+
+  
+    /* Force major section titles to stay centered and to break into only two clean lines */
+    .service-heading,
+    .compact-heading,
+    .family-heading {
+      text-align: center !important;
+    }
+
+    .service-heading h2,
+    .compact-heading h2,
+    .family-heading h2 {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: none !important;
+      line-height: 1.08 !important;
+    }
+
+    .service-heading h2 span,
+    .compact-heading h2 span,
+    .family-heading h2 span {
+      display: block !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 1024px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.7rem, 5vw, 2.35rem) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.55rem, 7vw, 2rem) !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.45rem, 6.8vw, 1.82rem) !important;
+      }
+    }
+
+  
+    /* Two-line heading centering fix: keep the heading width to its content,
+       then center that whole two-line block. This prevents the lines from
+       looking visually off-center around tablet widths like 725–768px. */
+    .service-heading,
+    .compact-heading,
+    .family-heading {
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    .service-heading h2,
+    .compact-heading h2,
+    .family-heading h2 {
+      display: inline-grid !important;
+      justify-items: center !important;
+      width: fit-content !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      line-height: 1.08 !important;
+    }
+
+    .service-heading h2 span,
+    .compact-heading h2 span,
+    .family-heading h2 span {
+      display: block !important;
+      width: auto !important;
+      white-space: nowrap !important;
+      text-align: center !important;
+      justify-self: center !important;
+    }
+
+    /* Tablet range: nudge the section-title size down a touch so the
+       two-line composition stays balanced and centered. */
+    @media (max-width: 820px) and (min-width: 391px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.5rem, 4.6vw, 1.95rem) !important;
+      }
+    }
+
+    /* Very narrow phones still need a little extra help fitting comfortably. */
+    @media (max-width: 390px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.42rem, 6.3vw, 1.75rem) !important;
+      }
+    }
+
+  
+    /* True section-title centering fix:
+       the issue was the heading wrapper itself was still a left-aligned 700px box.
+       Make each major heading wrapper full-width and center its content. */
+    .service-heading,
+    .compact-heading,
+    .family-heading {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    .service-heading h2,
+    .compact-heading h2,
+    .family-heading h2 {
+      display: inline-grid !important;
+      justify-items: center !important;
+      width: fit-content !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      line-height: 1.08 !important;
+    }
+
+    .service-heading h2 span,
+    .compact-heading h2 span,
+    .family-heading h2 span {
+      display: block !important;
+      width: auto !important;
+      white-space: nowrap !important;
+      text-align: center !important;
+      justify-self: center !important;
+    }
+
+    /* Smooth out the Johnson County section spacing on larger layouts */
+    .coverage-section {
+      padding-top: 46px !important;
+    }
+
+    @media (min-width: 761px) {
+      .compact-heading {
+        margin-bottom: 26px !important;
+      }
+    }
+
+    /* Keep tablet headings balanced without drifting */
+    @media (max-width: 1024px) and (min-width: 391px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.55rem, 4.2vw, 2.15rem) !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .service-heading h2,
+      .compact-heading h2,
+      .family-heading h2 {
+        font-size: clamp(1.42rem, 6.3vw, 1.75rem) !important;
+      }
+    }
+
+  
+    /* Final spacing tweak: bring the Johnson County section closer to Services */
+    .coverage-section {
+      padding-top: 28px !important;
+    }
+
+    @media (max-width: 760px) {
+      .coverage-section {
+        padding-top: 20px !important;
+      }
+    }
+
+  
+    /* Uniform homepage section rhythm */
+    #services.section {
+      padding-bottom: 24px !important;
+    }
+
+    .coverage-section {
+      padding-top: 24px !important;
+      padding-bottom: 24px !important;
+    }
+
+    .family-section {
+      padding-top: 24px !important;
+      padding-bottom: 28px !important;
+    }
+
+    .service-heading,
+    .compact-heading,
+    .family-heading {
+      margin-bottom: 18px !important;
+    }
+
+    @media (max-width: 760px) {
+      #services.section {
+        padding-bottom: 18px !important;
+      }
+
+      .coverage-section {
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+      }
+
+      .family-section {
+        padding-top: 18px !important;
+        padding-bottom: 20px !important;
+      }
+
+      .service-heading,
+      .compact-heading,
+      .family-heading {
+        margin-bottom: 14px !important;
+      }
+    }
+
+  
+    /* Keep "How Can We Help?" on one line on normal phones/tablets.
+       Only allow it to wrap on extremely tiny widths under 250px. */
+    #services .service-heading h2 {
+      white-space: nowrap !important;
+      display: inline-block !important;
+      width: auto !important;
+      max-width: 100% !important;
+      font-size: clamp(1.5rem, 4.8vw, 2.2rem) !important;
+      line-height: 1.08 !important;
+    }
+
+    @media (max-width: 760px) {
+      #services .service-heading h2 {
+        font-size: clamp(1.45rem, 5.8vw, 2rem) !important;
+      }
+    }
+
+    @media (max-width: 250px) {
+      #services .service-heading h2 {
+        white-space: normal !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<button aria-controls="siteDrawer" aria-expanded="false" aria-label="Open menu" class="menu-button" id="menuButton" type="button">
+<span aria-hidden="true" class="menu-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</button>
+<a class="header-services" href="#services">Services</a>
+<a aria-label="Frequently Asked Questions" class="header-faqs" href="faqs.html">FAQs</a>
+<a class="call-button" href="tel:9132141924">Call 913-214-1924</a>
+</div>
+</header>
+<div aria-hidden="true" class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside aria-hidden="true" aria-label="Site navigation" class="drawer" id="siteDrawer">
+<div class="drawer-top">
+<div class="drawer-brand">Good News Towing</div>
+<button aria-label="Close menu" class="close-button" id="closeButton" type="button">×</button>
+</div>
+<nav class="drawer-nav">
+<a href="services.html">Services</a>
+<a href="service-area.html">Service Area</a>
+<a href="about.html">About Us</a>
+<a href="faqs.html">FAQs</a>
+</nav>
+<div class="drawer-contact">
+<strong>Need a tow?</strong>
+<a href="tel:9132141924">913-214-1924</a><br/>
+      Olathe &amp; Johnson County, Kansas
+    </div>
+</aside>
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-content">
+<img alt="Good News Towing" class="hero-logo" src="images/logo.png"/>
+<h1>Towing &amp; Roadside Help</h1>
+<p class="hero-subtitle">Serving Johnson County with straightforward pricing, proper equipment, and service inspired by the love of Jesus.</p>
+</div>
+</div>
+</section>
+<section class="section" id="services">
+<div class="container">
+<div class="section-heading service-heading">
+<h2>How Can We Help?</h2>
+</div>
+<div class="service-grid">
+<article class="service-card">
+<div class="service-card-header">
+<h3>Towing</h3>
+<img alt="Tow truck icon" class="service-art" src="images/towing.png"/>
+</div>
+<p>Front-wheel drive, rear-wheel drive and all-wheel drive vehicles can be moved with the appropriate equipment and method.</p>
+<a class="service-learn-link" href="services.html#towing">Learn about our towing methods →</a>
+</article>
+<article class="service-card">
+<div class="service-card-header">
+<h3>Jump Starts</h3>
+<img alt="Jump starter icon" class="service-art" src="images/jump-start.png"/>
+</div>
+<p>Battery trouble at home, work or on the road. If the jump does not solve the problem, we can help with the next step.</p>
+<a class="service-learn-link" href="services.html#jump-starts">Learn more about our jump-start service →</a>
+</article>
+<article class="service-card">
+<div class="service-card-header">
+<h3>Lockouts</h3>
+<img alt="Lockout tools icon" class="service-art" src="images/lockout.png"/>
+</div>
+<p>Careful vehicle entry with pricing based on the vehicle and the difficulty of the job.</p>
+<a class="service-learn-link" href="services.html#lockouts">Learn about our lockout service →</a>
+</article>
+<article class="service-card">
+<div class="service-card-header">
+<h3>Tire Changes</h3>
+<img alt="Flat tire and jack icon" class="service-art" src="images/tire-change.png"/>
+</div>
+<p>If you have a usable spare and the needed wheel-lock key or spare-tire tools, we can help get the vehicle moving again.</p>
+<a class="service-learn-link" href="services.html#tire-changes">Learn about our tire-change service →</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section coverage-section">
+<div class="container">
+<div class="section-heading compact-heading">
+<h2><span>Serving Johnson County</span><span>with Purpose</span></h2>
+</div>
+<div class="service-area-box">
+<p class="coverage-label">Local Coverage</p>
+<p>See the communities we regularly serve throughout Johnson County and nearby areas.</p>
+<a class="text-link" href="service-area.html">View our service area →</a>
+</div>
+</div>
+</section>
+<section class="section family-section">
+<div class="container">
+<div class="section-heading compact-heading family-heading">
+<h2><span>The Family Behind</span><span>Good News</span></h2>
+</div>
+<div class="family-card">
+<div class="family-card-photo">
+<img alt="Good News Towing family" src="images/family.jpg"/>
+</div>
+<div class="family-card-copy">
+<p>We’re a local family-run business focused on dependable service, fair pricing, and caring for the community we serve.</p>
+<a class="text-link" href="about.html">Read our story →</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<strong>Good News Towing LLC</strong>
+<p>Olathe &amp; Johnson County, Kansas<br/><a class="footer-phone" href="tel:9132141924">913-214-1924</a></p>
+</div>
+<div class="footer-links">
+<a href="services.html">Services</a>
+<a href="service-area.html">Service Area</a>
+<a href="about.html">About</a>
+<a href="faqs.html">FAQs</a>
+</div>
+</div>
+<div class="copyright">
+        © <span id="year"></span> Good News Towing LLC. All rights reserved.
+      </div>
+</div>
+</footer>
+<script>
+    const menuButton = document.getElementById('menuButton');
+    const closeButton = document.getElementById('closeButton');
+    const drawer = document.getElementById('siteDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+
+    function openMenu() {
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+      document.body.classList.add('menu-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      menuButton.setAttribute('aria-expanded', 'true');
+      closeButton.focus();
+    }
+
+    function closeMenu() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.focus();
+    }
+
+    menuButton.addEventListener('click', openMenu);
+    closeButton.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (drawer.classList.contains('open')) closeMenu();
+      });
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && drawer.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

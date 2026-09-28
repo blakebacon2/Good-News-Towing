@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Services | Good News Towing</title>
+<meta content="Towing, jump starts, flat tire assistance, and vehicle lockout assistance from Good News Towing in Johnson County, Kansas." name="description"/>
+<style>
+:root {
+  --blue:#1e7af9; --blue-dark:#125fc9; --card-blue:#176ad8; --pink:#ff319f;
+  --cyan:#0efff3; --ink:#172033; --muted:#5d6676; --white:#fff; --soft:#f5f8fc;
+  --line:#e7ebf1; --content:1120px; --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;background:var(--blue);line-height:1.6}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(calc(100% - 28px),var(--content));margin:0 auto}
+
+/* Sticky header copied from the finished homepage language */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(30,122,249,.97);border-bottom:1px solid rgba(255,255,255,.16);backdrop-filter:blur(14px)}
+.header-inner{width:min(calc(100% - 28px),var(--content));min-height:74px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:22px}
+.menu-button{justify-self:start;width:46px;height:46px;padding:0;display:grid;place-items:center;border:0;border-radius:14px;background:rgba(255,255,255,.14);cursor:pointer}
+.menu-icon{width:22px;display:grid;gap:5px}
+.menu-icon span{display:block;height:2px;border-radius:999px;background:#fff}
+.header-services{justify-self:end}
+.header-services,.header-faqs{display:inline-flex;align-items:center;justify-content:center;min-height:44px;color:#fff;font-size:.95rem;font-weight:800;white-space:nowrap}
+.header-services:hover,.header-services:focus-visible,.header-faqs:hover,.header-faqs:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:4px}
+.call-button{justify-self:end;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;background:var(--pink);color:#fff;font-weight:800;letter-spacing:.02em;box-shadow:0 10px 24px rgba(255,49,159,.30);white-space:nowrap}
+.call-button:hover,.call-button:focus-visible{background:#e5228d}
+
+.drawer-backdrop{position:fixed;inset:0;z-index:70;background:rgba(23,32,51,.38);opacity:0;pointer-events:none;transition:opacity 180ms ease}
+.drawer-backdrop.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;inset:0 auto 0 0;z-index:80;width:min(88vw,360px);padding:24px;display:flex;flex-direction:column;background:var(--card-blue);color:#fff;transform:translateX(-104%);transition:transform 220ms ease;box-shadow:18px 0 60px rgba(23,32,51,.18)}
+.drawer.open{transform:translateX(0)}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.16)}
+.drawer-brand{font-size:1rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.close-button{width:42px;height:42px;border:0;border-radius:12px;background:rgba(255,255,255,.10);color:#fff;font-size:1.45rem;cursor:pointer}
+.drawer-nav{display:grid;gap:4px;padding:28px 0}
+.drawer-nav a{padding:13px 12px;border-radius:12px;font-size:1.08rem;font-weight:700;color:#fff}
+.drawer-nav a:hover,.drawer-nav a:focus-visible{background:rgba(255,255,255,.10);color:var(--cyan)}
+.drawer-contact{margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.82);font-size:.95rem}
+.drawer-contact strong{display:block;margin-bottom:4px;color:#fff}
+.drawer-contact a{color:var(--cyan);font-weight:800}
+
+/* Services page */
+.services-hero{padding:42px 0 30px;background:var(--blue)}
+.intro-card{min-height:390px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);align-items:stretch;overflow:hidden;border:2px solid var(--pink);border-radius:28px;background:linear-gradient(145deg,var(--card-blue),var(--blue-dark));color:#fff;box-shadow:0 12px 30px rgba(10,58,135,.15)}
+.intro-copy{align-self:center;padding:52px 26px 52px 54px}
+.intro-kicker{margin:0 0 8px;color:var(--cyan);font-size:.84rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.intro-card h1{margin:0;font-size:clamp(2.35rem,5vw,4rem);line-height:1.02;letter-spacing:-.045em}
+.intro-card p{max-width:690px;margin:20px 0 0;color:rgba(255,255,255,.93);font-size:clamp(1rem,1.6vw,1.12rem)}
+.intro-character{position:relative;display:flex;align-items:flex-end;justify-content:center;padding:22px 20px 0}
+.intro-character::before{content:"";position:absolute;inset:auto 7% 4% 7%;height:74%;border-radius:48% 48% 0 0;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.20),rgba(255,255,255,0) 66%)}
+.intro-character img{position:relative;z-index:1;width:min(100%,245px);max-height:360px;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 16px 20px rgba(0,0,0,.14))}
+
+.services-section{padding:26px 0 74px;background:var(--blue);color:#fff}
+.section-heading{text-align:center;margin:0 auto 22px}
+.section-heading h2{margin:0;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.08;letter-spacing:-.035em;color:#fff}
+.section-heading p{max-width:680px;margin:10px auto 0;color:rgba(255,255,255,.90)}
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.service-card{display:flex;flex-direction:column;min-height:0;padding:26px;scroll-margin-top:92px;border:2px solid var(--pink);border-radius:22px;background:var(--card-blue);color:#fff;box-shadow:0 10px 24px rgba(10,58,135,.16)}
+.service-card-header{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+.service-card h3{margin:0;font-size:1.45rem;line-height:1.1}
+.service-art{flex:0 0 74px;width:74px;height:74px;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.11))}
+.service-card p{margin:0;color:rgba(255,255,255,.95)}
+.towing-intro{margin-bottom:10px!important}
+.service-card ul{margin:14px 0 16px;padding-left:1.25rem;display:grid;gap:6px;color:#fff}
+.service-card li::marker{color:var(--pink)}
+.card-note{margin-top:auto!important;padding-top:12px}
+.card-note a{color:var(--cyan);font-weight:900}
+.placeholder-copy{color:rgba(255,255,255,.86)!important}
+.placeholder-tag{display:inline-block;width:max-content;margin-top:18px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.11);color:rgba(255,255,255,.82);font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+
+
+.service-preview{margin:0 0 12px!important}
+.inline-highlight{color:#fff;font-weight:900}
+.service-details{margin-top:16px}
+.service-details summary{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:46px;padding:10px 14px;border:1px solid rgba(14,255,243,.50);border-radius:13px;background:rgba(14,255,243,.08);color:var(--cyan);font-weight:900;cursor:pointer;list-style:none;user-select:none;transition:background 160ms ease,border-color 160ms ease}
+.service-details summary:hover,.service-details summary:focus-visible{background:rgba(14,255,243,.14);border-color:rgba(14,255,243,.78)}
+.service-details summary::-webkit-details-marker{display:none}
+.service-details summary::after{content:"+";flex:0 0 auto;font-size:1.35rem;line-height:1;color:#fff}
+.service-details[open] summary::after{content:"−"}
+.details-content{padding:7px 0 2px}
+.details-content p{margin:10px 0 0}
+.details-content ul{margin:12px 0 0;padding-left:1.25rem;display:grid;gap:7px}
+.details-content li::marker{color:var(--pink)}
+.service-card:target{box-shadow:0 0 0 3px rgba(14,255,243,.28),0 10px 24px rgba(10,58,135,.16)}
+
+.page-cta{padding:0 0 54px;background:var(--blue)}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:30px 32px;border-radius:22px;background:var(--card-blue);border:2px solid var(--pink);color:#fff;box-shadow:0 10px 24px rgba(10,58,135,.16)}
+.cta-box h2{margin:0;font-size:clamp(1.6rem,3vw,2.2rem)}
+.cta-box p{margin:6px 0 0;color:rgba(255,255,255,.92)}
+.cta-button{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;border-radius:14px;background:var(--pink);color:#fff;font-weight:900}
+
+.footer{padding:28px 0 24px;background:var(--blue-dark);color:rgba(255,255,255,.76);border-top:1px solid rgba(255,255,255,.16)}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:end}
+.footer strong{display:block;color:#fff;font-size:1.05rem}
+.footer p{margin:7px 0 0}
+.footer-phone{color:var(--pink)!important;font-weight:900;font-size:1.05rem}
+.footer-links{display:flex;justify-content:flex-end;gap:18px;flex-wrap:wrap;font-size:.95rem}
+.footer-links a{color:var(--cyan)}
+.copyright{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.10);font-size:.9rem}
+:focus-visible{outline:3px solid rgba(14,255,243,.60);outline-offset:3px}
+
+@media (max-width:900px){
+  .intro-card{grid-template-columns:minmax(0,1.2fr) minmax(215px,.8fr)}
+  .intro-copy{padding-left:38px}
+}
+@media (max-width:767px){
+  .header-inner{width:min(calc(100% - 16px),var(--content));min-height:62px;grid-template-columns:auto auto auto auto;justify-content:space-between;gap:6px}
+  .menu-button{width:42px;height:42px}
+  .header-services,.header-faqs{min-height:40px;padding:0 9px;border:1px solid rgba(255,255,255,.72);border-radius:12px;background:rgba(255,255,255,.08);font-size:.76rem;text-decoration:none!important}
+  .call-button{min-height:40px;padding:0 10px;font-size:.75rem}
+  .services-hero{padding:20px 0 20px}
+  .intro-card{min-height:0;grid-template-columns:minmax(0,1.35fr) minmax(118px,.65fr);align-items:center}
+  .intro-copy{padding:28px 10px 28px 24px;text-align:left}
+  .intro-card h1{font-size:clamp(2rem,10vw,2.8rem)}
+  .intro-card p{margin-top:16px;font-size:.96rem;max-width:none}
+  .intro-character{min-height:0;padding:12px 14px 12px 0;align-items:flex-end}
+  .intro-character::before{inset:auto 2% 6% 2%;height:82%}
+  .intro-character img{width:150px;max-height:210px}
+  .services-section{padding-top:18px;padding-bottom:46px}
+  .service-grid{grid-template-columns:1fr}
+  .service-card{padding:20px 18px}
+  .service-art{flex-basis:58px;width:58px;height:58px}
+  .service-card h3{font-size:1.23rem}
+  .cta-box{align-items:flex-start;flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-links{justify-content:flex-start}
+}
+@media (max-width:390px){
+  .header-faqs{display:none!important}
+  .header-inner{width:min(calc(100% - 12px),var(--content));grid-template-columns:auto auto auto;gap:6px}
+  .header-services{font-size:.76rem;padding:0 8px}
+  .call-button{font-size:.76rem;padding:0 9px}
+  .intro-card{grid-template-columns:1fr}
+  .intro-copy{padding:24px 20px 8px}
+  .intro-character{padding:0 14px 12px;justify-content:center}
+  .intro-character::before{inset:auto 10% 5% 10%;height:75%}
+  .intro-character img{width:170px;max-height:245px}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<button aria-controls="siteDrawer" aria-expanded="false" aria-label="Open menu" class="menu-button" id="menuButton" type="button"><span aria-hidden="true" class="menu-icon"><span></span><span></span><span></span></span></button>
+<a class="header-services" href="index.html">Home</a>
+<a aria-label="Frequently Asked Questions" class="header-faqs" href="faqs.html">FAQs</a>
+<a class="call-button" href="tel:9132141924">Call 913-214-1924</a>
+</div>
+</header>
+<div aria-hidden="true" class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside aria-hidden="true" aria-label="Site navigation" class="drawer" id="siteDrawer">
+<div class="drawer-top"><div class="drawer-brand">Good News Towing</div><button aria-label="Close menu" class="close-button" id="closeButton" type="button">×</button></div>
+<nav class="drawer-nav">
+<a href="index.html">Home</a><a href="service-area.html">Service Area</a><a href="about.html">About Us</a><a href="faqs.html">FAQs</a>
+</nav>
+<div class="drawer-contact"><strong>Need a tow?</strong><a href="tel:9132141924">913-214-1924</a><br/>Olathe &amp; Johnson County, Kansas</div>
+</aside>
+<main>
+<section class="services-hero">
+<div class="container">
+<div class="intro-card">
+<div class="intro-copy">
+<p class="intro-kicker">Good News Towing</p>
+<h1>Our Services</h1>
+<p>Here at Good News Towing, we provide four main services throughout Johnson County: towing, jump starts, flat tire assistance, and vehicle lockout assistance. Below, you can learn more about each service and how we can help.</p>
+</div>
+<div class="intro-character"><img alt="Good News Towing character waving" src="images/blake.png"/></div>
+</div>
+</div>
+</section>
+<section class="services-section" id="services">
+<div class="container">
+<div class="section-heading"><h2>How We Can Help</h2><p>Choose the service that fits your situation. Open any card for more details.</p></div>
+<div class="service-grid">
+<article class="service-card towing-card" id="towing"><div class="service-card-header"><img alt="Tow truck illustration" class="service-art" src="images/towing.png"/><h3>Towing</h3></div><p class="service-preview">Whether your vehicle is front-wheel drive, rear-wheel drive, or all-wheel drive, we have the proper equipment to tow it safely. We can handle both routine and more difficult towing situations while taking care to avoid unnecessary damage.</p><details class="service-details"><summary><span class="summary-label">See more details</span></summary><div class="details-content"><p>Here are some common examples of vehicles and situations we can tow:</p><p>We use the appropriate towing equipment and techniques for each vehicle and situation, including vehicles that require additional care because of their drivetrain or condition.</p><ul><li>Vehicles that will not start</li><li>Vehicles with flat or damaged tires</li><li>Vehicles involved in an accident</li><li>Vehicles stuck in park</li><li>Vehicles that will not shift into neutral</li><li>Vehicles with lost or missing keys</li><li>Vehicles with locked steering</li><li>Vehicles with damaged wheels or suspension</li><li>Vehicles that are completely locked up and unable to roll</li></ul></div></details><p class="card-note">Not sure if your vehicle can be safely towed? <a href="tel:9132141924">Give us a call.</a></p></article>
+<article class="service-card" id="jump-starts"><div class="service-card-header"><img alt="Jump start illustration" class="service-art" src="images/jump-start.png"/><h3>Jump Starts</h3></div><p class="service-preview">We use a professional 1,700-amp jump pack, giving your vehicle a much stronger starting boost than standard jumper cables from another car. <strong class="inline-highlight">If the vehicle needs more than a jump start, our tow credit policy may help you avoid paying separately for both services.</strong></p><details class="service-details"><summary><span class="summary-label">See more details</span></summary><div class="details-content"><ul><li>Once your vehicle starts, the goal is to give you time to get organized and drive to your preferred or nearest battery or repair service location.</li><li>If the jump start does not get your vehicle running, we can apply the jump start service fee toward a tow.</li><li>If the vehicle dies again within one hour while you are getting it to a service location, we can apply that fee toward the tow as well.</li><li>You would only pay the additional amount needed for the tow instead of paying for both services separately.</li></ul></div></details><p class="card-note">Not sure whether you need a jump start or a tow? <a href="tel:9132141924">Give us a call.</a></p></article>
+<article class="service-card" id="flat-tire"><div class="service-card-header"><img alt="Flat tire assistance illustration" class="service-art" src="images/tire-change.png"/><h3>Flat Tire Assistance</h3></div><p class="service-preview">If you have a flat tire, we can install your spare and take care of the lifting, lug nuts, and inflation needed to get you moving again. <strong class="inline-highlight">To complete this service, you'll need to have your own spare with the tire already mounted on the wheel.</strong></p><details class="service-details"><summary><span class="summary-label">See more details</span></summary><div class="details-content"><ul><li>If your wheels use locking lug nuts, please have the wheel-lock key available.</li><li>Your spare does not have to be fully inflated. If it is low, we can add air before installing it.</li><li>We carry equipment for stubborn lug nuts and other common difficulties that can make a roadside tire change harder.</li><li>Whenever possible, we check the spare and wheel setup before beginning so we can identify obvious problems first.</li><li>For some small punctures in the tread area, we may be able to use a temporary tire plug and reinflate the tire instead of installing the spare. The tire should still be professionally inspected and repaired or replaced as soon as possible.</li><li>If we cannot complete the tire change and you choose to have the vehicle towed, we can apply the tire-assistance service fee toward the tow instead of charging you separately for both services.</li></ul></div></details><p class="card-note">Not sure whether your spare, tire, or wheel setup will work? <a href="tel:9132141924">Give us a call.</a></p></article>
+<article class="service-card" id="lockout"><div class="service-card-header"><img alt="Vehicle lockout assistance illustration" class="service-art" src="images/lockout.png"/><h3>Vehicle Lockout Assistance</h3></div><p class="service-preview">Locked your keys in the car? It happens to just about everybody eventually. We provide vehicle lockout assistance for cars, trucks, and SUVs throughout Johnson County. <strong class="inline-highlight">Tell us the year, make, and model when you call, and we can usually tell you whether it is a lockout we are equipped to handle.</strong></p><details class="service-details"><summary><span class="summary-label">See more details</span></summary><div class="details-content"><ul><li>We carry several types of professional lockout tools and use different methods depending on the vehicle.</li><li>Different vehicles require different approaches, so we choose the method that fits the door and locking system.</li><li>We can give you an estimate before coming out so you know what to expect.</li><li>Depending on the vehicle and situation, our lockout service may cost considerably less than calling a locksmith.</li></ul></div></details><p class="card-note">Have a question about your vehicle or lockout? <a href="tel:9132141924">Give us a call.</a></p></article>
+</div>
+</div>
+</section>
+<section class="page-cta">
+<div class="container">
+<div class="cta-box">
+<div><h2>Not sure which service you need?</h2><p>Tell us what is going on with your vehicle, and we can help you figure out the next step.</p></div>
+<a class="cta-button" href="tel:9132141924">Call Good News Towing</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><strong>Good News Towing LLC</strong><p>Olathe &amp; Johnson County, Kansas<br/><a class="footer-phone" href="tel:9132141924">913-214-1924</a></p></div>
+<div class="footer-links"><a href="index.html">Home</a><a href="service-area.html">Service Area</a><a href="about.html">About</a><a href="faqs.html">FAQs</a></div>
+</div>
+<div class="copyright">© <span id="year"></span> Good News Towing LLC. All rights reserved.</div>
+</div>
+</footer>
+<script>
+const menuButton=document.getElementById('menuButton'),closeButton=document.getElementById('closeButton'),drawer=document.getElementById('siteDrawer'),backdrop=document.getElementById('drawerBackdrop');
+function openMenu(){drawer.classList.add('open');backdrop.classList.add('open');document.body.classList.add('menu-open');drawer.setAttribute('aria-hidden','false');menuButton.setAttribute('aria-expanded','true');closeButton.focus()}
+function closeMenu(){drawer.classList.remove('open');backdrop.classList.remove('open');document.body.classList.remove('menu-open');drawer.setAttribute('aria-hidden','true');menuButton.setAttribute('aria-expanded','false');menuButton.focus()}
+menuButton.addEventListener('click',openMenu);closeButton.addEventListener('click',closeMenu);backdrop.addEventListener('click',closeMenu);drawer.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{if(drawer.classList.contains('open'))closeMenu()}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeMenu()});document.querySelectorAll('.service-details').forEach(detail=>{
+  const label=detail.querySelector('.summary-label');
+  const updateLabel=()=>{if(label)label.textContent=detail.open?'Show less':'See more details'};
+  detail.addEventListener('toggle',updateLabel);
+  updateLabel();
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+
+
+const serviceIds=new Set(['towing','jump-starts','flat-tire','lockout']);
+function openLinkedService(){
+  const id=window.location.hash.replace('#','');
+  if(!serviceIds.has(id)) return;
+  const card=document.getElementById(id);
+  if(!card) return;
+  const details=card.querySelector('.service-details');
+  if(details) details.open=true;
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(()=>card.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'}),60);
+}
+openLinkedService();
+window.addEventListener('hashchange',openLinkedService);
+</script>
+</body>
+</html>
